@@ -5,7 +5,7 @@ package observer;
  * @author Lisa Vittori
  * @version 2021-02-22
  */
-public class Benachrichtigung {
+public class Benachrichtigung implements Observer{
 	private String login;
 
 	/**
@@ -30,4 +30,8 @@ public class Benachrichtigung {
 		System.out.println("--------------------------------------------------------------------------");
 	}
 
+	@Override
+	public void update(String gegenstand, StatusInformation stat) {
+		sendeNachricht(gegenstand, stat);
+	}
 }

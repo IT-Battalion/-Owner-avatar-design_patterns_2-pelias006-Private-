@@ -8,24 +8,12 @@ package strategy;
  */
 public class Evaluate {
     private final CalculationMethod calculationMethod;
-    private final int numberA;
-    private final int numberB;
 
-    public Evaluate(CalculationMethod calculationMethod, int numberA, int numberB) {
+    public Evaluate(CalculationMethod calculationMethod) {
         this.calculationMethod = calculationMethod;
-        this.numberA = numberA;
-        this.numberB = numberB;
     }
 
     public CalculationMethod getCalculationMethod() {
         return calculationMethod;
-    }
-
-    public int getNumberA() {
-        return numberA;
-    }
-
-    public int getNumberB() {
-        return numberB;
     }
 }

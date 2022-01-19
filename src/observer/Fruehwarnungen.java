@@ -9,7 +9,7 @@ import java.util.*;
  * @author Lisa Vittori
  * @version 2021-02-22
  */
-public class Fruehwarnungen {
+public class Fruehwarnungen extends MessageService{
 	private Map<String, Set<String>> fw;
 	
 	/**
@@ -32,6 +32,7 @@ public class Fruehwarnungen {
 			s = new TreeSet<String>();
 			fw.put(login, s);
 		}
+		super.notifyObservers(gegenstand, StatusInformation.ADDED);
 		return s.add(gegenstand);
 	}
 	
@@ -51,6 +52,7 @@ public class Fruehwarnungen {
 		if(s.size()== 0) {
 			fw.remove(login);
 		}
+		super.notifyObservers(gegenstand, StatusInformation.DELETED);
 		return result;
 	}
 	
